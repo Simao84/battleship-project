@@ -75,7 +75,8 @@ class BattleshipGameState:
     def __str__(self) -> str:
         outstring = ""
         for idx in [0, 1]:
-            outstring += f"----------- Player {idx + 1} -----------\n"
+            shots_fired = len(self.players[idx].shots)
+            outstring += f"----------- Player {idx + 1} (Shots: {shots_fired}) -----------\n"
             if self.winner == idx:
                 outstring += Back.GREEN + Fore.YELLOW + Style.BRIGHT + "Winner!" + Style.RESET_ALL + "\n"
             elif self.idx_player_active == idx:
