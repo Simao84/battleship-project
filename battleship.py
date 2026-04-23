@@ -212,6 +212,7 @@ class Battleship(Game):
                     hit = True
                     all_hit = all(loc in player.successful_shots for loc in ship.location)
                     if all_hit:
+                        print(f"{ship.name} sunk!")
                         if all(
                             all(loc in player.successful_shots for loc in s.location)
                             for s in opponent.ships
